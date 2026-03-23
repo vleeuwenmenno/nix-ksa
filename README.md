@@ -15,7 +15,7 @@ Nix flake to install and run [Kitten Space Agency](https://ksa-linux.ahwoo.com) 
 Run directly:
 
 ```bash
-nix run github:menno/nix-ksa
+nix run github:vleeuwenmenno/nix-ksa
 ```
 
 Or from a local checkout:
