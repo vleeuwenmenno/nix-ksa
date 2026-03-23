@@ -52,6 +52,14 @@ When a new version is released, update `version` and `hash` in `flake.nix`:
 nix hash file --type sha256 --to sri setup_ksa_vNEW_VERSION.tar.gz
 ```
 
+## Known issues
+
+- **Fullscreen doesn't render correctly on startup** — the game starts in fullscreen but nothing displays until you switch to windowed mode. Observed on Hyprland (NixOS), unclear if this affects other Wayland compositors or XWayland-only setups.
+- **Scroll only zooms out, not in** — mouse scroll input only registers in one direction. Also observed on Hyprland; may be a GLFW/XWayland interaction issue or an upstream KSA bug.
+- **Native Wayland is broken** — GLFW 3.5's Wayland backend produces `The platform does not provide the window position` errors and the window never appears on tiling compositors. The wrapper defaults to XWayland (`GLFW_PLATFORM=x11`) as a workaround.
+
+> These issues were observed on NixOS with Hyprland. They may or may not be specific to Hyprland — testing on other compositors (Sway, GNOME, KDE) would help narrow it down. KSA is in very early alpha so some of these may be upstream bugs.
+
 ## License
 
 The flake packaging is MIT. KSA itself is proprietary (unfree).
