@@ -61,6 +61,7 @@
       {
         packages.default = pkgs.stdenv.mkDerivation rec {
           pname = "ksa";
+          # New versions can be found on https://ksa-linux.ahwoo.com/
           version = "2026.3.8.3883";
 
           src = pkgs.fetchurl {
