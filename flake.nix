@@ -67,7 +67,7 @@
             # Official download URL from the KSA alpha page
             url = "https://ksa-linux.ahwoo.com/download?file=setup_ksa_v${version}.tar.gz";
             name = "setup_ksa_v${version}.tar.gz";
-            hash = "sha256-rFVYLlfkACrVeZKOlwtiE3hO6PIwblDWBzn/MTuMxYc=";
+            hash = "sha256-p62aKLKXNsB0k83sHhb3Dn5qYt5/LHkG7OipBdqSSRU=";
           };
 
           # The tarball extracts into linux-x64/
@@ -99,7 +99,8 @@
             runHook preInstall
 
             install -dm755 "$out/opt/ksa" "$out/bin"
-            cp -r . "$out/opt/ksa/"
+            cp -a . "$out/opt/ksa/"
+            chmod +x "$out/opt/ksa/KSA"
 
             makeWrapper "$out/opt/ksa/KSA" "$out/bin/ksa" \
               --set DOTNET_ROOT "${dotnet-runtime}/share/dotnet" \
