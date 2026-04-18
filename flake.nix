@@ -61,13 +61,13 @@
       {
         packages.default = pkgs.stdenv.mkDerivation rec {
           pname = "ksa";
-          version = "2026.4.10.4057";
+          version = "2026.4.15.4141";
 
           src = pkgs.fetchurl {
             # Official download URL from the KSA alpha page
             url = "https://ksa-linux.ahwoo.com/download?file=setup_ksa_v${version}.tar.gz";
             name = "setup_ksa_v${version}.tar.gz";
-            hash = "sha256-B0tYMSG8MJMJI0htJmVrtcGs6FuaM6fQ9c2HzMxS/Eo=";
+            hash = "sha256-5KoJf/OelTUDz85e6ZOU2Dkt/EJ75JdgYsA4q0nf2k8=";
           };
 
           # The tarball extracts into linux-x64/
